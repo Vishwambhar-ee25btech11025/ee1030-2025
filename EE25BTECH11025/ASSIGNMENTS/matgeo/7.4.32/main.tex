@@ -46,7 +46,11 @@ $ABCD$ is a square of side length 2 units. $C_1$ is the circle touching all the 
 \textbf{Solution: }\\
 Let:\\
 The centre of incircle and circumcircle be $\vec{O}$.\\
-The radius of incircle be $r_1$ and that of circumcircle be $r_2$.\\
+The radius of incircle be $r_1$ and that of circumcircle be $r_2$.
+\begin{align}
+    \vec{A}=\myvec{1\\1};\vec{B}=\myvec{-1\\1}\\
+    \vec{C}=\myvec{-1\\-1};\vec{D}=\myvec{1\\-1}
+\end{align}
 Given:
 \begin{align}
     r_1 = 1\\
@@ -72,7 +76,7 @@ For, $\vec{P}$ = $\vec{Q}$
 \begin{align}
     \sum \norm{\vec{X}-\vec{Q}}^2 = \sum \norm{\vec{X}}^2 + 4.\norm{\vec{Q}}^2 -2\vec{Q}\sum \vec{X}\\
     4\brak{1^2+1^2} + 4\brak{2}-2\vec{Q}\brak{\myvec{1\\1}+\myvec{1\\-1}+\myvec{-1\\1}+\myvec{-1\\-1}}\\
-    \therefore \norm{\vec{A}-\vec{Q}}^2+\norm{\vec{B}-\vec{Q}}^2+|\norm{\vec{C}-\vec{Q}}^2+norm{\vec{D}-\vec{Q}}^2 = 12
+    \therefore \norm{\vec{A}-\vec{Q}}^2+\norm{\vec{B}-\vec{Q}}^2+|\norm{\vec{C}-\vec{Q}}^2+\norm{\vec{D}-\vec{Q}}^2 = 12
 \end{align}
 conclusion:
 \begin{align}
@@ -93,22 +97,21 @@ Hence, option(a) is correct.
 Equation (20) is the equation of parabola.\\
 Hence, correct option is (c).
 
-\item Let the point moving point be $S$ and the line equation be $\vec{n}^\top\vec{S}=0$.
+\item Let the point moving point be $S$ and the directrix equation be $\vec{n}^\top\vec{x}=0$.\\
+Then by given condition,
 \begin{align}
     \frac{|\vec{n}^\top\vec{S}|}{||\vec{n}||}=||\vec{S}-\vec{A}||\\
     \frac{|\vec{n}^\top\vec{S}|^2}{||\vec{n}||^2}=||\vec{S}-\vec{A}||^2\\
     \frac{|\vec{S}^\top\vec{n}\vec{n}^\top\vec{S}|}{||\vec{n}||}=\brak{\vec{S}-\vec{A}}^\top\brak{\vec{S}-\vec{A}}\\
     \vec{S}^\top\brak{I-\vec{\hat{n}}\vec{\hat{n}}^\top}\vec{S}-2\vec{A}^\top\vec{S}+\vec{A}^\top\vec{A}=0
 \end{align}
-Equation 24 is the locus of the moving point.\\
-Let:
-\begin{align}
-    \vec{A}=\myvec{1\\1};\vec{B}=\myvec{-1\\1}\\
-    \vec{C}=\myvec{-1\\-1};\vec{D}=\myvec{1\\-1}
-\end{align}
+Equation 24 is the locus of the moving point which is the quadratic form of parabola.\\
+
+
+Let:\\
 $\vec{m_1}$ be the direction vector of line AC, $\vec{m_2}$ be the direction vector of line $L'$.
 \begin{align}
-    \vec{m_1} = \myvec{-2\\-2}=\myvec{1\\1}\\
+    \vec{m_1} = \myvec{1\\1}\\
     \vec{m_2} = \myvec{2\\-2}
 \end{align}
 The equation of line $L'$ 

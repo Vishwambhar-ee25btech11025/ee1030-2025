@@ -113,7 +113,11 @@ $ABCD$ is a square of side length 2 units. $C_1$ is the circle touching all the 
 \begin{frame}{Let}
 Let:\\
 The centre of incircle and circumcircle be $\vec{O}$.\\
-The radius of incircle be $r_1$ and that of circumcircle be $r_2$.\\
+The radius of incircle be $r_1$ and that of circumcircle be $r_2$.
+\begin{align}
+    \vec{A}=\myvec{1\\1};\vec{B}=\myvec{-1\\1}\\
+    \vec{C}=\myvec{-1\\-1};\vec{D}=\myvec{1\\-1}
+\end{align}
 Given:
 \begin{align}
     r_1 = 1\\
@@ -147,7 +151,7 @@ For, $\vec{P}$ = $\vec{Q}$
 \begin{align}
     \sum \norm{\vec{X}-\vec{Q}}^2 = \sum \norm{\vec{X}}^2 + 4.\norm{\vec{Q}}^2 -2\vec{Q}\sum \vec{X}\\
     4\brak{1^2+1^2} + 4\brak{2}-2\vec{Q}\brak{\myvec{1\\1}+\myvec{1\\-1}+\myvec{-1\\1}+\myvec{-1\\-1}}\\
-    \therefore \norm{\vec{A}-\vec{Q}}^2+\norm{\vec{B}-\vec{Q}}^2+|\norm{\vec{C}-\vec{Q}}^2+norm{\vec{D}-\vec{Q}}^2 = 12
+    \therefore \norm{\vec{A}-\vec{Q}}^2+\norm{\vec{B}-\vec{Q}}^2+|\norm{\vec{C}-\vec{Q}}^2+\norm{\vec{D}-\vec{Q}}^2 = 12
 \end{align}
 \end{frame}
 
@@ -157,6 +161,15 @@ For, $\vec{P}$ = $\vec{Q}$
     \frac{12}{16}=0.75
 \end{align}
 Hence, option(a) is correct.
+\end{frame}
+
+\begin{frame}{Plot}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\columnwidth]{../figs/plot1.png}
+        \caption{Plot of the given square and circles}
+        \label{fig:fig}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{2nd question}
@@ -180,6 +193,15 @@ Equation (20) is the equation of parabola.\\
 Hence, correct option is (c).
 \end{frame}
 
+\begin{frame}{Plot}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\columnwidth]{../figs/plot2.png}
+        \caption{Plot of the given circles, square and locus of the point }
+        \label{fig:fig}
+    \end{figure}
+\end{frame}
+
 \begin{frame}{3rd question}
     Let the point moving point be $S$ and the line equation be $\vec{n}^\top\vec{S}=0$.
 \begin{align}
@@ -191,12 +213,8 @@ Hence, correct option is (c).
 \end{frame}
 
 \begin{frame}{3rd question}
-    Equation 24 is the locus of the moving point.\\
+    Equation 24 is the locus of the moving point which is a parabola.\\
 Let:
-\begin{align}
-    \vec{A}=\myvec{1\\1};\vec{B}=\myvec{-1\\1}\\
-    \vec{C}=\myvec{-1\\-1};\vec{D}=\myvec{1\\-1}
-\end{align}
 $\vec{m_1}$ be the direction vector of line AC, $\vec{m_2}$ be the direction vector of line $L'$.
 \begin{align}
     \vec{m_1} = \myvec{-2\\-2}=\myvec{1\\1}\\
@@ -230,6 +248,17 @@ Now, finding area of the triangle:
 \end{align}
 Option (c) is correct.
 \end{frame}
+
+\begin{frame}{Plot}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\columnwidth]{../figs/plot3.png}
+        \caption{Plot of the given circles, square and locus of the point }
+        \label{fig:fig}
+    \end{figure}
+\end{frame}
+
+
 \begin{frame}[fragile]
     \frametitle{C Code}
     \begin{lstlisting}
@@ -304,19 +333,62 @@ ratio, focus, directrix_y, area, Ax, Ay, Bx, By, Cx, Cy, Dx, Dy, T1x, T1y, T2x, 
 theta = np.linspace(0, 2*np.pi, 200)
 A = ([Ax, Bx, Cx, Dx, Ax, Bx])
 B = ([Ay, By, Cy, Dy, Ay, By])
-plt.plot(A, B, color='black')
-plt.text(Ax+0.1, Ay+0.1, "A", fontsize = 10, color = 'black')
-plt.text(Bx+0.1, By+0.1, "B", fontsize = 10, color = 'black')
+C = ([Ax, 0])
+D = ([Ay, 1.41])
+plt.plot(C, D, color='green')
+C = ([Bx, 0])
+D = ([By, 1.41])
+plt.plot(C, D, color='green')
     \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]
     \frametitle{plot1.py}
     \begin{lstlisting}
-plt.text(Cx+0.1, Cy+0.1, "C", fontsize = 10, color = 'black')
-plt.text(Dx+0.1, Dy+0.1, "D", fontsize = 10, color = 'black')
+C = ([Cx, 0])
+D = ([Cy, 1.41])
+plt.plot(C, D, color='green')
+C = ([Dx, 0])
+D = ([Dy, 1.41])
+plt.plot(C, D, color='green')
+C = ([Ax, -0.5])
+D = ([Ay, 0.854])
+plt.plot(C, D, color='green')
+C = ([Bx, -0.5])
+D = ([By, 0.854])
+plt.plot(C, D, color='green')
+C = ([Cx, -0.5])
+D = ([Cy, 0.854])
+plt.plot(C, D, color='green')
+C = ([Dx, -0.5])
+D = ([Dy, 0.854])
+plt.plot(C, D, color='green')
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{plot1.py}
+    \begin{lstlisting}
+plt.plot(A, B, color='black')
+plt.plot(0, 0, "ko")
+plt.plot(0, 1.414, "ko")
+plt.text(Ax+0.1, Ay+0.1, "A(1,1)", fontsize = 10, color = 'black')
+plt.text(Bx+0.1, By+0.1, "B(-1,1)", fontsize = 10, color = 'black')
+plt.text(Cx+0.1, Cy+0.1, "C(-1,-1)", fontsize = 10, color = 'black')
+plt.text(Dx+0.1, Dy+0.1, "D(1,-1)", fontsize = 10, color = 'black')
+plt.text(0,0, "(0,0)", fontsize = 10, color = 'black')
+plt.text(0.1, 1.414, "Q", fontsize = 10, color = 'black')
+plt.plot(-0.5, 0.854, "ko")
+plt.text(-0.4, 0.854, "P", fontsize = 10, color = 'black')
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{plot1.py}
+    \begin{lstlisting}
 plt.plot(np.cos(theta), np.sin(theta), label="Inner Circle C1")
 plt.plot(np.sqrt(2)*np.cos(theta), np.sqrt(2)*np.sin(theta), label="Outer Circle C2")
+
 plt.axis("equal")
 plt.grid(True)
 plt.savefig("../figs/plot1.png")
@@ -330,26 +402,39 @@ plt.show()
 import numpy as np
 import matplotlib.pyplot as plt
 from call import get_results
+
 ratio, focus, directrix_y, area, Ax, Ay, Bx, By, Cx, Cy, Dx, Dy, T1x, T1y, T2x, T2y, T3x, T3y = get_results()
 A = ([Ax, Bx, Cx, Dx, Ax, Bx])
 B = ([Ay, By, Cy, Dy, Ay, By])
+
 x = np.linspace(-5, 5, 300)
-p = focus[1] - directrix_y
-y = (x**2) / (4*p)
-plt.plot(x, y, label="Locus (Parabola)")
-plt.axhline(directrix_y, color='r', linestyle='--', label='Directrix')
-plt.plot(focus[0], focus[1], 'go')
+
+p = (focus[1] - directrix_y)
+y = -(x**2) / (4*p)+1
     \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]
     \frametitle{plot2.py}
     \begin{lstlisting}
+plt.plot(x, y, label="Locus (Parabola)")
+plt.axhline(directrix_y, color='r', linestyle='--', label='Directrix')
+plt.plot(focus[0], -focus[1]+1, 'go')
+plt.plot(A, B, color='black')
 plt.text(Ax+0.1, Ay+0.1, "A", fontsize = 10, color = 'black')
 plt.text(Bx+0.1, By+0.1, "B", fontsize = 10, color = 'black')
 plt.text(Cx+0.1, Cy+0.1, "C", fontsize = 10, color = 'black')
 plt.text(Dx+0.1, Dy+0.1, "D", fontsize = 10, color = 'black')
-plt.text(focus[0]+0.1, focus[1]+0.1, 'focus', fontsize = 10, color = 'black')
+plt.text(focus[0]+0.1, -focus[1]+1+0.1, 'focus', fontsize = 10, color = 'black')
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{plot2.py}
+    \begin{lstlisting}
+theta = np.linspace(0, 2*np.pi, 200)
+plt.plot(np.cos(theta), np.sin(theta), label="Inner Circle C1")
+plt.plot(np.sqrt(2)*np.cos(theta), np.sqrt(2)*np.sin(theta), label="Outer Circle C2")
 plt.axis("equal")
 plt.grid(True)
 plt.savefig("../figs/plot2.png")
@@ -368,8 +453,38 @@ A = ([Ax, Bx, Cx, Dx, Ax, Bx])
 B = ([Ay, By, Cy, Dy, Ay, By])
 C = ([T1x, T2x, T3x, T1x, T2x])
 D = ([T1y, T2y, T3y, T1y, T2y])
+def Q(x, y):
+    return x**2+y**2-2*x*y-4*x-4*y+4
+E = ([Bx, Dx])
+F = ([By, Dy])
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{plot3.py}
+    \begin{lstlisting}
+X = np.linspace(-1, 3, 100)
+Y = -X + 2
+
+x_range = np.linspace(-3, 5, 400)
+y_range = np.linspace(-3, 5, 400)
+S, P = np.meshgrid(x_range, y_range)
+Z = Q(S, P)
+parabola = plt.contour(S, P, Z, levels=[0], colors='blue', linewidths = 2)
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{plot3.py}
+    \begin{lstlisting}
 triangle = np.array([[0,0], [2,0], [1, np.sqrt(3)/2]])
 plt.plot(A, B, color='black')
+plt.plot(E, F, "r-")
+plt.plot(X, Y, "r-")
+
+E = ([Ax, Cx])
+F = ([Ay, Cy])
+plt.plot(E, F, "r-")
     \end{lstlisting}
 \end{frame}
 
@@ -384,6 +499,13 @@ plt.plot(C, D, color='black')
 plt.text(T1x+0.1, T1y+0.1, "T1", fontsize = 10, color = 'black')
 plt.text(T2x+0.1, T2y+0.1, "T2", fontsize = 10, color = 'black')
 plt.text(T3x+0.1, T3y+0.1, "T3", fontsize = 10, color = 'black')
+plt.text(2.62, -0.64, r'$L`$')
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{plot3.py}
+    \begin{lstlisting}
 plt.axis("equal")
 plt.grid(True)
 plt.savefig("../figs/plot3.png")
@@ -391,31 +513,5 @@ plt.show()
     \end{lstlisting}
 \end{frame}
 
-\begin{frame}{Plot}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.5\columnwidth]{../figs/plot1.png}
-        \caption{Plot of the given square and circles}
-        \label{fig:fig}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Plot}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.5\columnwidth]{../figs/plot2.png}
-        \caption{Plot of the given circles, square and locus of the point }
-        \label{fig:fig}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{Plot}
-    \begin{figure}
-        \centering
-        \includegraphics[width=0.5\columnwidth]{../figs/plot3.png}
-        \caption{Plot of the given circles, square and locus of the point }
-        \label{fig:fig}
-    \end{figure}
-\end{frame}
 
 \end{document}

@@ -8,17 +8,21 @@ B = ([Ay, By, Cy, Dy, Ay, By])
 
 x = np.linspace(-5, 5, 300)
 
-p = focus[1] - directrix_y
-y = (x**2) / (4*p)
+p = (focus[1] - directrix_y)
+y = -(x**2) / (4*p)+1
 plt.plot(x, y, label="Locus (Parabola)")
 plt.axhline(directrix_y, color='r', linestyle='--', label='Directrix')
-plt.plot(focus[0], focus[1], 'go')
+plt.plot(focus[0], -focus[1]+1, 'go')
 plt.plot(A, B, color='black')
 plt.text(Ax+0.1, Ay+0.1, "A", fontsize = 10, color = 'black')
 plt.text(Bx+0.1, By+0.1, "B", fontsize = 10, color = 'black')
 plt.text(Cx+0.1, Cy+0.1, "C", fontsize = 10, color = 'black')
 plt.text(Dx+0.1, Dy+0.1, "D", fontsize = 10, color = 'black')
-plt.text(focus[0]+0.1, focus[1]+0.1, 'focus', fontsize = 10, color = 'black')
+plt.text(focus[0]+0.1, -focus[1]+1+0.1, 'focus', fontsize = 10, color = 'black')
+
+theta = np.linspace(0, 2*np.pi, 200)
+plt.plot(np.cos(theta), np.sin(theta), label="Inner Circle C1")
+plt.plot(np.sqrt(2)*np.cos(theta), np.sqrt(2)*np.sin(theta), label="Outer Circle C2")
 
 plt.axis("equal")
 plt.grid(True)
